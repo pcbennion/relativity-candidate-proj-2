@@ -1,0 +1,25 @@
+# docker-compose.yml
+version: '2'
+services:
+    prometheus:
+        image: prom/prometheus
+        volumes:
+            - ./prometheus.yml:/etc/prometheus/prometheus.yml
+        command:
+            - '--config.file=/etc/prometheus/prometheus.yml'
+        ports:
+            - '9090:9090'
+    fred_tsdb:
+        image: fred_tsdb
+        ports:
+            - '8000:8000'
+    grafana:
+        image: grafana/grafana
+        volumes:
+            - ./grafana:/var/lib/grafana
+        environment:
+            - GF_SECURITY_ADMIN_PASSWORD=password
+        depends_on:
+            - prometheus
+        ports:
+            - "3000:3000"

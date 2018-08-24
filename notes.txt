@@ -1,0 +1,30 @@
+8/13 (Mon): Cloned the repository and briefly researched TSDB basics.
+8/15 (Wed): Investigated TSDB services. Selected Prometheus as my platform.
+				- InfluxDB is a paid service after a short trial time, so I passed.
+				- Prometheus is a free service and appeared to be very easy to set up. 
+				- Graphite seems to be considered obsolete compared to Prometheus.
+				- OpenTSDB looks promising, but requires more setup and configuration than any other option.
+8/16 (Thu): Set up and followed Prometheus's quick start guide.
+            Selected Grafana as my Dashboard, as it supports Prometheus out of the box.
+            Set up Grafana and connected it to Prometheus.
+8/17 (Fri): Began to investigate datasets.
+				- Many datasets operate purely on the HTML api, which I am unfamiliar with. Others are only available as file downloads.
+				- Some early attempts to connect Prometheus to Kaggle datasets ran into issues where I was unfamiliar with the system, the documentation, and where to look for solutions.
+				- Quandl has a very easy Python API, which complements the prometheus_client python library I found.
+				- Does Prometheus support non-concurrent data?
+			Selected the Federal Reserve dataset on quandl for ease-of-use reasons.
+8/18 (Sat):	Developed a script to decode the Quandl data and import it into Prometheus
+				- Prometheus's python interface does not easily support setting timestamps. Data can be imported and analyzed easily, but there is little support for historical data.
+				- Set the data to loop for now for display.
+				- Created a basic dashboard for Grafana, displaying all four metrics plus some derived data.
+			Considered switching to an OpenTSDB service.
+				- My dev environment (Ubuntu on Windows) does not appear to be compatible with OpenTSDB's Zookeeper service.
+8/19 (Sun): Gathered all in-progress sources together for commit.
+			Leaving on a trip to NYC.
+8/23 (Thu): Returned from NYC.
+			Per Jordan's advice, set up Dockerfiles for environment configurations.
+				- Learned how to compose a set of containers with a different service in each.
+			Continued to investigate Prometheus tsdb's using historical data.
+				- Considered switching to Bitcoin per Jordan's advice, but I wanted to figure this out.
+				- In the end, I was unable to find a way to configure Prometheus with historical data.
+8/24 (Fri):	Wrote setup scripts and tested the images on another system.

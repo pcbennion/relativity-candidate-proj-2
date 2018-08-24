@@ -1,3 +1,22 @@
+## Instructions:
+Installation - installs Docker and starts the Docker service:
+$ sudo sh install.sh
+
+Run - builds the tsdb Dockerfile and composes services for Prometheus, Grafana, and the Quandl-Prometheus tsdb:
+$ sh install.sh
+
+Shutting down - cleanly disables all three containers:
+$ docker stop $(docker ps -aq)
+
+Cleaning up - erases all three containers to return to a clean state:
+$ docker container prune
+
+
+
+
+
+## Old Readme:
+
 ## Relativity - Software Candidate Project
 This readme contains the instruction for the candidates take-home project.
 
