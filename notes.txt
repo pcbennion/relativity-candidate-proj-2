@@ -28,3 +28,11 @@
 				- Considered switching to Bitcoin per Jordan's advice, but I wanted to figure this out.
 				- In the end, I was unable to find a way to configure Prometheus with historical data.
 8/24 (Fri):	Wrote setup scripts and tested the images on another system.
+
+Tutorials and references used (other than installation guides for major components):
+
+https://www.forwardingflows.net/asyncio_python_prometheus_gauge_example/
+
+https://www.robustperception.io/instrumenting-python-with-prometheus
+
+https://finestructure.co/blog/2016/5/16/monitoring-with-prometheus-grafana-docker-part-1
